@@ -51,8 +51,8 @@ EOF
 )
 
 echo "Installing dante-server..."
-#sudo apt update > /dev/null
-#sudo apt install dante-server > /dev/null
+sudo apt update > /dev/null
+sudo apt install dante-server > /dev/null
 
 echo "Updating config files..."
 sudo mv /etc/danted.conf /etc/danted.conf.orig
