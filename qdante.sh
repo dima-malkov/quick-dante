@@ -51,8 +51,8 @@ EOF
 )
 
 echo "Installing dante-server..."
-sudo apt update > /dev/null
-sudo apt install dante-server > /dev/null
+sudo apt update
+sudo apt install dante-server
 
 echo "Updating config files..."
 sudo mv /etc/danted.conf /etc/danted.conf.orig
@@ -64,7 +64,7 @@ echo "$USER:$PASSWORD" | sudo chpasswd
 
 echo "Restarting Dante..."
 sudo systemctl restart danted.service
-sudo systemctl status | fgrep "Active:"
+sudo systemctl show danted.service | fgrep "ActiveState"
 
 if [ "$4" != "orig" ]
 then
